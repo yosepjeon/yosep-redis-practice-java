@@ -1,6 +1,5 @@
 package redis.data;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -15,7 +14,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
-import yosep.com.redis.config.RedisRepositoryConfig;
+import yosep.com.redis.common.config.RedisRepositoryConfig;
 
 import java.util.HashSet;
 import java.util.List;

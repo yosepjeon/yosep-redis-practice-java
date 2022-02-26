@@ -1,23 +1,20 @@
 package redis.data;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.redis.DataRedisTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Point;
 import org.springframework.data.redis.connection.DataType;
-import org.springframework.data.redis.connection.RedisServer;
 import org.springframework.data.redis.core.*;
 import org.springframework.test.context.junit4.SpringRunner;
 //import yosep.com.redis.config.EmbeddedRedisConfig;
-import yosep.com.redis.config.RedisRepositoryConfig;
+import yosep.com.redis.common.config.RedisRepositoryConfig;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
