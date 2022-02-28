@@ -2,9 +2,13 @@ package yosep.com.redis.service;
 
 import org.springframework.stereotype.Service;
 import yosep.com.redis.common.mapper.YosepMapper;
+import yosep.com.redis.data.code.UserRole;
 import yosep.com.redis.data.dto.UserDto;
 import yosep.com.redis.data.entity.User;
 import yosep.com.redis.data.repository.mysql.UserJpaRepository;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Service
 public class UserService {
@@ -21,8 +25,29 @@ public class UserService {
     }
 
     public UserDto findUserByUserId(String userId) {
-        User user = userJpaRepository.findByUserId(userId);
+        User user = userJpaRepository.findByUserId(userId).orElseThrow();
 
         return YosepMapper.userMapper.toDto(user);
+    }
+
+    @PostConstruct
+    public void initTestDate() {
+        for(int i=0;i<5;i++) {
+            User user = User.builder()
+                    .userId("test" + i)
+                    .password("test" + i)
+                    .name("test" + i)
+                    .role(UserRole.USER)
+                    .build();
+
+            userJpaRepository.save(user);
+        }
+    }
+
+    @PreDestroy
+    public void deleteTestData() {
+        for(int i=0;i<5;i++) {
+            userJpaRepository.deleteByUserId("test" + i);
+        }
     }
 }

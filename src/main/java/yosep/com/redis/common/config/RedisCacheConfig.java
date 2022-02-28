@@ -9,7 +9,7 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import yosep.com.redis.config.cachekey.UserCacheKey;
+import yosep.com.redis.common.config.cachekey.UserCacheKey;
 
 import java.time.Duration;
 import java.util.HashMap;
