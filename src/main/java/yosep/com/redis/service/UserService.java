@@ -7,9 +7,6 @@ import yosep.com.redis.data.dto.UserDto;
 import yosep.com.redis.data.entity.User;
 import yosep.com.redis.data.repository.mysql.UserJpaRepository;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 @Service
 public class UserService {
     private final UserJpaRepository userJpaRepository;
@@ -30,8 +27,7 @@ public class UserService {
         return YosepMapper.userMapper.toDto(user);
     }
 
-    @PostConstruct
-    public void initTestDate() {
+    public void initTestData() {
         for(int i=0;i<5;i++) {
             User user = User.builder()
                     .userId("test" + i)
@@ -44,7 +40,6 @@ public class UserService {
         }
     }
 
-    @PreDestroy
     public void deleteTestData() {
         for(int i=0;i<5;i++) {
             userJpaRepository.deleteByUserId("test" + i);

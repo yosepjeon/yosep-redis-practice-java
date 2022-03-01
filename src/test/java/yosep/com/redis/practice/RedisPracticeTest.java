@@ -1,4 +1,4 @@
-package redis.data;
+package yosep.com.redis.practice;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package redis.config;
+package yosep.com.redis.config;
 
 
 import org.springframework.beans.factory.annotation.Value;

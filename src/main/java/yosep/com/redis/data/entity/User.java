@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.redis.core.RedisHash;
 import yosep.com.redis.data.code.UserRole;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @Builder
 @Getter
-@RedisHash("user")
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user")
