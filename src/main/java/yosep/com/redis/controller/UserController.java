@@ -11,12 +11,11 @@ import yosep.com.redis.common.config.cachekey.UserCacheKey;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    @Cacheable(value = UserCacheKey.USER, key = "#id", unless = "#result == null")
+    @Cacheable(value = UserCacheKey.USER, key = "#userId", unless = "#result == null")
     @GetMapping("/{id}")
-    public ResponseEntity findUser(@PathVariable long id) {
+    public ResponseEntity findUserByUserId(@PathVariable String userId) {
 
 
         return ResponseEntity.ok().build();
     }
-
 }

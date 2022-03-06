@@ -1,9 +1,13 @@
 package yosep.com.redis.data.dto;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
+import org.springframework.data.redis.core.RedisHash;
 import yosep.com.redis.data.code.UserRole;
 
-@Data
+@Getter
+@Builder
+@RedisHash("user")
 public class UserDto {
     private String userId;
     private String password;
